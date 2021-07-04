@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const handleSearch = async (message) => {
   let reply = "";
   await fetch(
-    `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${message}&key=process.env.YOUTUBE_KEY`
+    `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${message}&key=${process.env.YOUTUBE_KEY}`
   )
     .then((res) => {
       return res.json();
